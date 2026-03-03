@@ -31,7 +31,7 @@ apple-sql-project/
 
 | Property | Detail |
 |---|---|
-| Source | [Kaggle — Apple Global Sales Dataset](https://www.kaggle.com) |
+| Source | [Kaggle — Apple Global Sales Dataset]([https://www.kaggle.com](https://www.kaggle.com/datasets/ashyou09/apple-global-product-sales-dataset)) |
 | Rows | 11,500 transactions |
 | Columns | 27 |
 | Period | January 2022 – December 2024 |
@@ -69,62 +69,6 @@ apple-sql-project/
 | `customer_rating` | DECIMAL | Post-purchase rating 3.0–5.0 (~30% NULL) |
 | `return_status` | VARCHAR | Kept / Returned / Exchanged |
 
----
-
-## 🚀 How to Run
-
-### Prerequisites
-- MySQL 8.0+ or MySQL 9.x
-- MySQL Workbench (optional but recommended)
-- Mac Terminal or any MySQL client
-
-### Step 1 — Clone the repository
-```bash
-git clone https://github.com/yourusername/apple-sql-project.git
-cd apple-sql-project
-```
-
-### Step 2 — Connect to MySQL with local_infile enabled
-```bash
-mysql --local-infile=1 -u root -p
-```
-
-### Step 3 — Run scripts in order
-```bash
-source sql/01_schema.sql
-```
-Then load the data (update the file path):
-```sql
-USE apple_sales_db;
-SET GLOBAL local_infile = 1;
-
-LOAD DATA LOCAL INFILE '/your/path/to/apple_global_sales_dataset.csv'
-INTO TABLE apple_sales
-CHARACTER SET utf8mb4
-FIELDS TERMINATED BY ','
-OPTIONALLY ENCLOSED BY '"'
-LINES TERMINATED BY '\r\n'
-IGNORE 1 ROWS
-(sale_id, sale_date, year, quarter, month, country, region, city,
- product_name, category, @storage_raw, color, unit_price_usd,
- discount_pct, units_sold, discounted_price_usd, revenue_usd,
- currency, fx_rate_to_usd, revenue_local_currency, sales_channel,
- payment_method, customer_segment, customer_age_group,
- @prev_os_raw, @rating_raw, return_status)
-SET
-  storage            = NULLIF(TRIM(@storage_raw), 'N/A'),
-  previous_device_os = NULLIF(TRIM(@prev_os_raw), 'N/A'),
-  customer_rating    = NULLIF(NULLIF(TRIM(@rating_raw), ''), 'NaN');
-```
-
-Then continue:
-```sql
-source sql/03_data_cleaning.sql
-source sql/04_exploration.sql
-source sql/11_views_and_procedures.sql
-```
-
----
 
 ## 📊 Business Questions Answered
 
@@ -215,9 +159,5 @@ source sql/11_views_and_procedures.sql
 ## 👤 Author
 
 **Your Name**
-[LinkedIn](https://linkedin.com/in/yourprofile) • [GitHub](https://github.com/yourusername)
+[LinkedIn]([https://linkedin.com/in/yourprofile](https://www.kaggle.com/datasets/ashyou09/apple-global-product-sales-dataset)) • [GitHub](https://github.com/doniyor-py)
 
----
-
-## 📄 License
-This project is open source and available under the [MIT License](LICENSE).
