@@ -31,7 +31,7 @@ apple-sql-project/
 
 | Property | Detail |
 |---|---|
-| Source | [Kaggle — Apple Global Sales Dataset]([https://www.kaggle.com](https://www.kaggle.com/datasets/ashyou09/apple-global-product-sales-dataset)) |
+| Source | [Kaggle — Apple Global Product Sales Dataset](https://www.kaggle.com/datasets/ashyou09/apple-global-product-sales-dataset) |
 | Rows | 11,500 transactions |
 | Columns | 27 |
 | Period | January 2022 – December 2024 |
@@ -156,8 +156,6 @@ apple-sql-project/
 
 ---
 
-## 👤 Author
-
-**Your Name**
-[LinkedIn]([https://linkedin.com/in/yourprofile](https://www.kaggle.com/datasets/ashyou09/apple-global-product-sales-dataset)) • [GitHub](https://github.com/doniyor-py)
+**Doniyor Mekhmonov**
+[LinkedIn](https://www.linkedin.com/in/doniyor-mekhmonov-a50b64329) • [GitHub](https://github.com/doniyor-py)
 
